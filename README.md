@@ -120,4 +120,39 @@ GROUP BY 1
 HAVING COUNT(*) > 1
 ```
 ### 3. CTAS (Create table As Select ) 
-  
+-- **Task 6: Create Summary tables** :Used CTAS to generate new table based on query results - each book and total book_issued_cnt**
+```sql
+CREATE TABLE book_issued_cnt AS
+SELECT
+   b.isbn,
+   b.book_title,
+  Count(ist.issued_id) as issue_count
+  FROM issued_Status as ist
+  JOIN books as b
+  ON ist.issued_book_isbn = b.isbn
+  GROUP BY b.isbn, b.book_title;
+```
+
+### 4. Data Analysis & Findings
+The following  SQL queries were used to address specific question.
+
+Task 7.**Retrieve All books in a specific category
+```sql
+  SELECT * FROM Books
+  WHERE Category = "Classic"
+
+```
+Task 8.**Task 8: Find Total Rental Income by Category**
+``` sql
+  SELECT 
+	b.category,
+    SUM(b.rental_price) as Rental_Price,
+    Count(*) as Book_Count
+  FROM books as b
+  JOIN Issued_Status as ist 
+  ON b.isbn = ist.issued_book_isbn
+  GROUP BY 1 
+  ORDER BY Book_count;
+
+``` 
+
