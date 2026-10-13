@@ -165,7 +165,7 @@ Task 9:**Retrieve the List of Books Not Yet Returned**
 	ON rs.issued_id = ist.issued_id
 	WHERE rs.return_id is Null;
 
-Task 10:** Display all members who have issued at least one book.**
+Task 10:**Display all members who have issued at least one book.**
 ``` sql
 	SELECT
 		members.member_id,
