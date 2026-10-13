@@ -155,7 +155,7 @@ Task 8.**Task 8: Find Total Rental Income by Category**
   ORDER BY Book_count;
 
 ```
-### JOINS 
+### 4.JOINS 
 Task 9:**Retrieve the List of Books Not Yet Returned**
 ``` sql
 	SELECT *
