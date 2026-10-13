@@ -155,4 +155,25 @@ Task 8.**Task 8: Find Total Rental Income by Category**
   ORDER BY Book_count;
 
 ```
+### JOINS 
+Task 9:**Retrieve the List of Books Not Yet Returned**
+``` sql
+	SELECT *
+	FROM issued_Status as ist
+	LEFT JOIN
+	return_status as rs
+	ON rs.issued_id = ist.issued_id
+	WHERE rs.return_id is Null;
+
+Task 10:** Display all members who have issued at least one book.**
+``` sql
+	SELECT
+		members.member_id,
+		members.member_name,
+		COUNT(ist.issued_member_id) as total_books_issued
+	FROM members
+	JOIN issued_status as ist
+	ON members.member_id = ist.issued_member_id
+	GROUP BY members.member_id
+	HAVING COUNT (ist.issued_member_id)>=1;
 
