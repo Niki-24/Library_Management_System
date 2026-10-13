@@ -154,5 +154,5 @@ Task 8.**Task 8: Find Total Rental Income by Category**
   GROUP BY 1 
   ORDER BY Book_count;
 
-``` 
+```
 
