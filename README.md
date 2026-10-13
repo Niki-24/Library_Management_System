@@ -121,7 +121,7 @@ HAVING COUNT(*) > 1
 ```
 ### 3. CTAS (Create table As Select ) 
 -- **Task 6: Create Summary tables** :Used CTAS to generate new table based on query results - each book and total book_issued_cnt**
-```sql
+``` sql
 CREATE TABLE book_issued_cnt AS
 SELECT
    b.isbn,
@@ -156,7 +156,7 @@ Task 8.**Task 8: Find Total Rental Income by Category**
 
 ```
 ### 4.JOINS 
-Task 9:**Retrieve the List of Books Not Yet Returned**
+Task 9: **Retrieve the List of Books Not Yet Returned**
 ``` sql
 	SELECT *
 	FROM issued_Status as ist
@@ -165,7 +165,7 @@ Task 9:**Retrieve the List of Books Not Yet Returned**
 	ON rs.issued_id = ist.issued_id
 	WHERE rs.return_id is Null;
 
-Task 10:**Display all members who have issued at least one book.**
+Task 10: **Display all members who have issued at least one book.**
 ``` sql
 	SELECT
 		members.member_id,
